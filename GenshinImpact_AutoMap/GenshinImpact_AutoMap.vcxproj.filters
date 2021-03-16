@@ -68,6 +68,27 @@
     <ClCompile Include="QtClassMyHotKeyObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ATM_ObjectLists.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_SendSocket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_ActivationKYJG.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="QtWidgetsClassMySelectGenshinImpactHandle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_Matrix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_SaveLoadFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ATM_Modules.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AutomaticTrackingMap.h">
@@ -92,6 +113,24 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="QtClassMyHotKayNativeEventFilter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ATM_ObjectLists.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ATM_SendSocket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ATM_ActivationKYJG.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ATM_Matrix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ATM_SaveLoadFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ATM_Modules.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -122,6 +161,87 @@
     <Image Include="resource\Paimon1680x1050.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="resource\ObjectIcons\ObjectList0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\ObjectIcons\ObjectList0Mask.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\ObjectIcons\ObjectList1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\ObjectIcons\ObjectList1Mask.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\ObjectIcons\ObjectList2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\ObjectIcons\ObjectList2Mask.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\ObjectIcons\ObjectList999.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\ObjectIcons\ObjectList999Mask.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\ObjectIcons\ObjectFlagList0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\ObjectIcons\ObjectFlagList0Mask.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\GIAVATAR.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\NumUID\UID_.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\NumUID\uid0.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\NumUID\uid1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\NumUID\uid2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\NumUID\uid3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\NumUID\uid4.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\NumUID\uid5.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\NumUID\uid6.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\NumUID\uid7.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\NumUID\uid8.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\NumUID\uid9.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\GIAVATARMASK.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\ObjectIcons\ObjectFlagList1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\ObjectIcons\ObjectFlagList1Mask.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\GISTAR.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="resource\GISTARMASK.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="QtClassMyExitButton.h">
@@ -130,5 +250,13 @@
     <QtMoc Include="QtClassMyHotKeyObject.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="QtWidgetsClassMySelectGenshinImpactHandle.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="QtWidgetsClassMySelectGenshinImpactHandle.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
 </Project>

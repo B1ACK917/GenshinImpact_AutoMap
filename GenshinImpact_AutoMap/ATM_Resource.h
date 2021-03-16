@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 #include <Windows.h>
 #include <opencv2/opencv.hpp>
 #include <opencv2/imgproc/types_c.h>
@@ -14,19 +15,46 @@ public:
 public:
 	Mat GIMAP;
 	Mat MAINMASK;
+	Mat GIAVATAR;
+	Mat GIAVATARMASK;
+	Mat GISTAR;
+	Mat GISTARMASK;
 	Mat *GIOBJICON;
+	Mat *GIOBJICONMASK;
+	Mat *GIOBJFLAGICON;
+	Mat *GIOBJFLAGICONMASK;
 	Mat *GIPAIMON;
+	Mat *GINUMUID;
 
 private:
 	HBITMAP hGIMAP;
 	HBITMAP hMAINMASK;
+	HBITMAP hGIAVATAR;
+	HBITMAP hGIAVATARMASK;
+	HBITMAP hGISTAR;
+	HBITMAP hGISTARMASK;
 	HBITMAP *hGIOBJICON;
+	HBITMAP *hGIOBJICONMASK;
+	HBITMAP *hGIOBJFLAGICON;
+	HBITMAP *hGIOBJFLAGICONMASK;
 	HBITMAP *hGIPAIMON;
+	HBITMAP *hGINUMUID;
 
 	void loadGiMap();
 	void loadMainMask();
+	void loadGiAvatar();
+	void loadGiAvatarMask();
+	void loadGiStar();
+	void loadGiStarMask();
 	void loadGiPaimon();
+	void loadGiObjIcon();
+	void loadGiObjIconMask();
+	void loadGiObjFlagIcon();
+	void loadGiObjFlagIconMask();
+	void loadGiNumUID();
 
 	bool HBitmap2Mat(HBITMAP& _hBmp, cv::Mat& _mat);
+	bool HBitmap2MatAlpha(HBITMAP& _hBmp, cv::Mat& _mat);
+	bool Mat2MaskMat(Mat &in, Mat &out);
 };
 

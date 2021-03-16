@@ -7,6 +7,11 @@
 #include "ATM_MouseEvent.h"
 #include "ATM_GiState.h"
 #include "ATM_ThreadMatch.h"
+#include "ATM_ObjectLists.h"
+#include "ATM_SendSocket.h"
+#include "ATM_ActivationKYJG.h"
+#include "ATM_SaveLoadFile.h"
+#include "ATM_Modules.h"
 
 enum ThisWinState
 {
@@ -26,6 +31,14 @@ class AutomaticTrackingMap
 	ATM_GiState GIS;
 	//多线程匹配
 	ATM_ThreadMatch TMS;
+	//加载物品标记
+	ATM_ObjectLists OLS;
+	//Socket通信
+	ATM_SendSocket SST;
+	//空荧酒馆激活
+	ATM_ActivationKYJG AKY;
+	//存档
+	ATM_SaveLoadFile SLF;
 
 	cv::Mat MainMat;
 	cv::Mat MainMatTmp;
@@ -43,19 +56,23 @@ public:
 	ATM_MouseEvent MET;
 
 	//自动悬浮窗句柄
-	HWND thisHandle;
+	HWND thisHandle=NULL;
 	//是否启用自动追踪
 	bool isAutoMode = false;
+	bool isAutoInitFinish = false;
 
+	//窗口大小
+	Size autoWindowSize = Size(300, 300);
 	//悬浮窗大小
-	Size autoMapSize = Size(250, 200);
+	Size autoMapSize = Size(300, 300);//Size(212, 212);
+	Point autoMapCenter = Point(150, 150);//Point(106,106);
 	//完整地图大小
 	Size mapSize = Size(RES.GIMAP.cols, RES.GIMAP.rows);
 	//完整地图世界中心，相对原点
 	Point mapWorldCenter = Point(1416, 3306);
 
 	//悬浮窗中心所对大地图位置
-	Point zerosMinMap = Point(1466, 3272);
+	Point2d zerosMinMap = Point(1466, 3272);
 	//悬浮窗相对原神窗口位置
 	Point offGiMinMap = Point(250, 100);
 	//
@@ -63,8 +80,13 @@ public:
 
 	//原神是否正在运行标志
 
-
-
+	string SystemUserName="";
+	string SystemUserLocalLow="";
+	string SystemUserFileIndex="";
+	string ApplicationCompanyName = "天理系统";
+	string ApplicationName="悬浮窗自动地图";
+	LANGID SystemLanguageID=0;
+	string SystemLanguage = "Chinese";
 	//Qt
 	QImage MainImg;
 
@@ -96,19 +118,49 @@ public:
 	void setWindowsPos();
 	void setWindowsPos(HWND _thisHandle);
 
-	void setMouseDownPos(int x,int y);
-	void setMouseUpPos(int x, int y);
-	void setMouseMovePos(int x, int y);
+	void setMoveMapDownPos(int x,int y);
+	void setMoveMapUpPos(int x, int y);
+	void setMoveMapMovePos(int x, int y);
+
+	void setOffsetDownPos(int x, int y);
+	void setOffsetUpPos(int x, int y);
+	void setOffsetMovePos(int x, int y);
+
+	void setScaleMapDelta(int x, int y,int delta);
 
 	void setAutoMode();
 	bool getAutoMode();
+
+	void setObjIsShow(int klass);
+	void setObjFlagIsShow();
+	void setAddFlagOnPos();
+	void setKongYingJiuGuanState();
+
+	void setGenshinImpactWndHandle(HWND giHandle);
+
+	int getUID();
+	void saveLocal();
+	void loadLocal();
+
+private:
+	void getSystemInfo();
 private:
 	int getThisState();
-	
-
-	
+	void getKYJGState();
 	void setThisState();
 	void setThreadMatchMat();
+
+	void drawObjectLists();
+	void drawFlagLists();
+	void drawAvatar();
+	void CopyToThis();
+	void CopyToLocal();
+private:
+	void addWeightedAlpha(Mat &backgroundImage, Mat& Image, Mat &maskImage);
+	void addWeightedAlpha(Mat &backgroundImage, Mat& Image, Mat &maskImage,double alpha);
+	void addWeightedPNG(Mat &backgroundImage, Mat& Image);
+	Mat rotateAvatar(double angle);
+	Mat rotateAvatar(double angle,double scale);
 };
 
 typedef AutomaticTrackingMap ATmap;
